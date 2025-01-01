@@ -1,7 +1,7 @@
-.navbar{
+/* .navbar{
   background-color: white;
  position: sticky !important;
- top: 0 !important; /* Ensure the navbar sticks to the top of the page */
+ top: 0 !important; 
  z-index: 1000 !important; 
 }
 
@@ -10,209 +10,170 @@
 }
 .navlinks{
   color: black;
-  justify-content: space-between !important;
+  
+  gap:30px
 }
 
 .btn-make{
   border-radius: 20px;
+} */
+
+/* Navbar styling */
+.navbar {
+  background-color: white;
+  position: sticky;
+  top: 120;
+  z-index: 100;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Nav links styling */
+.navlinks {
 
+  gap: 20px;
+}
 
+.navbar-toggler{
+ border: none !important;
+ justify-content: right !important;
+}
+
+.navbar-toggler:hover {
+  background-color: transparent !important; 
+  justify-content: right !important;
+  border: none !important;
+}
+.navbar-toggler:focus{
+  box-shadow: none !important;
+}
 
 
 
 /* home page css */
+
+
 .home-container {
-  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background-image: url('assets/img/bg3.jpg'); /* Replace with your image URL */
   background-size: cover;
-  background-position: center center;
-  display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
-  color: white;
+  background-position: center;
+  padding: 20px;
+}
+
+.home-content {
   text-align: center;
-  background-attachment: fixed;
-  
- 
-}
-@media (max-width: 768px) {
-  .home-container {
-    background-attachment: scroll; /* Disable parallax effect on smaller screens */
-    height: auto; /* Height adjusts based on content */
-    background-size: cover; /* Ensure the background still covers */
-    background-position: center center; /* Center the background image */
-  }
+  color: white;
+  max-width: 1200px;
+  width: 100%;
 }
 
-
-
-
-/* For larger desktop screens (optional) */
-@media (max-width: 400px) {
-  .home-container {
-    background-position: center center !important; /* Keep background centered */
-    height: auto; /* Adjust based on content */
-    background-size: cover;
-   
-    max-width: 100% !important;
-  }
-}
-
-.home-content h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: left;
-  padding: 40px 20px 0px 0px;
-  margin-left: 80px;
-  
-}
-@media (max-width: 768px) {
-  .home-content h1 {
-    font-size: 2rem;
-    padding: 20px 20px 0px 0px; 
-    
-  }
-}
-
-.home-content p {
-  font-size: 1.5rem;
-  text-align: left;
-  margin-left: 80px;
-}
-
-
-@media (max-width: 1024px) {
-  .home-content h1 {
-    font-size: 2rem; /* Slightly smaller */
-  }
-  .home-content p {
-    font-size: 1rem;
-  }
-}
-
-/* Breakpoint for small screens (e.g., smartphones) */
-@media (max-width: 768px) {
-  .home-content h1 {
-    font-size: 1.8rem; /* Smaller for small screens */
-  }
-  .home-content p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Breakpoint for very small screens (e.g., narrow smartphones) */
-@media (max-width: 480px) {
-  .home-content h1 {
-    font-size: 1.5rem; /* Even smaller for very small screens */
-  }
-  .home-content p {
-    font-size: 0.8rem;
-  }
-}
-
-
-
-/* card css-------------------------------------------------------------------------------------- */
 
 
 .card-container {
   display: flex;
-  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center the cards */
- margin:20px 20px 20px 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch; /* Ensures other cards don't inherit height */
 }
 
 .card {
- 
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-height: 400px;
-  justify-content: center; /* Vertically center content */
-  align-items: center;
-
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1; /* Maintain flexibility for other cards */
 }
 
 .card:first-child {
-  width: 400px; /* Increased width for the first card */
-  background-color: #1977cc;
-  max-height: 550px !important; /* Ensure the card height is sufficient */
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Space between content and button */
-  padding: 20px; /* Add padding to ensure content doesn't touch the edges */
-  position: relative; /* Needed for absolute positioning of button */
-}
-
-.card:not(:first-child) {
-  background-color: #e2e3e5 !important; /* Light blue background for other 3 cards */
-  max-height:400px !important; /* Reduced height for other 3 cards */
-  padding: 10px; /* Adjust padding to fit reduced height */
-  overflow: hidden; /* Ensure content stays within bounds */
-  backdrop-filter: blur(5px); 
+  max-width: 400px;
+  min-width: 300px;
+  background-color: #007bff; /* Specific color for the first card */
+  /* height: 450px;  */
+  flex: none; /* Ensures it doesn’t follow the default flex-grow */
 }
 
 
-.card:first-child button {
-  background-color: #566470;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  /* position: relative;  */
-  margin-top: 15px; 
-}
-
-.card:first-child button:hover {
-  background-color: #adcbe7;
-}
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .card-title {
   font-size: 1.5rem;
-  margin: 0 0 10px;
-  color: #333;
+  margin-bottom: 10px;
 }
 
 .card-description {
-  font-size: 1rem !important;
- 
-
-  color: #131414;
-  text-align: center !important;
-
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  .card-container {
-    flex-direction: row;
-    justify-content: center;
-  }
+
+button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto !important; 
+  text-align: center; 
 }
 
-@media (max-width: 600px) {
+button:hover {
+  background-color: #d35400;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .card-container {
-    flex-direction: column; /* Stack cards vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   .card {
-    width: 90%; /* Adjust width for small screens */
-    max-height: none;
+    max-width: 90%;
+    flex: none;
+  }
+
+  .card:first-child {
+    max-width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .home-content {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+
 
 
 
@@ -527,6 +488,10 @@
   text-align: center;
 }
 
+.bookAppointment p{
+  margin:10px 30px 20px 30px
+}
+
 .appointment-form {
   display: flex;
   flex-direction: column;
@@ -576,7 +541,329 @@
 
 }
 
-.make_app_btn:hover{
 
+
+
+
+/* departments css------------------------------------------------------------- */
+
+.department{
+  text-align: center;
+  align-items: center;
+  margin:50px 0px 0px 0px ;
 }
 
+.department_main{
+  margin:30px 90px 0px 90px ;
+}
+
+.department_main {
+  gap: 20px; /* Add spacing between columns */
+}
+
+.department_main ul {
+  list-style: none;
+  padding: 0;
+}
+
+.department_main ul li {
+  cursor: pointer !important;
+  padding: 10px;
+
+  margin-bottom: 10px;
+  
+  transition: background-color 0.3s ease;
+  color: black;
+  
+}
+
+.department_main ul li:hover {
+ 
+  color: #0d6efd;
+}
+
+
+
+.vertical-line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+
+.vertical-line::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  width: 3px;
+  background-color: blue;
+  transition: height 0.3s ease, top 0.3s ease;
+}
+
+.vertical-line.design::before {
+  height: 25%;
+  top: 0;
+}
+
+.vertical-line.sales::before {
+  height: 25%;
+  top: 25%;
+}
+
+.vertical-line.certificate::before {
+  height: 25%;
+  top: 50%;
+}
+
+.vertical-line.quality::before {
+  height: 25%;
+  top: 75%;
+}
+
+
+.department-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.department-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.department-item:hover {
+  /* background-color: #f5f5f5; */
+}
+
+
+.department-item.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+
+
+/* footer css----------------------------------------------------------------------------------------------- */
+
+/* Footer Base Styling */
+.footer_back {
+  background-color: #343a40; /* Dark background for the footer */
+  color: white;
+  padding: 40px 20px;
+  
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for responsiveness */
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px 10px 0px 50px;
+ 
+  text-align: center;
+}
+
+.footer h3, .footer h4 {
+  color: #f8d210; /* Highlighted color for headings */
+  margin-bottom: 15px;
+}
+
+.footer p, .footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.5;
+}
+
+.footer ul li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer ul li:hover {
+  color: #f8d210; /* Highlighted color on hover */
+}
+
+/* Social Links */
+
+.social-links {
+  justify-content: center;
+}
+.social-links a {
+  margin-right: 10px;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #f8d210;
+}
+
+/* Copyright Section */
+.footer_back p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer_div1, 
+  .footer_div2, 
+  .footer_div3 {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer h3, .footer h4 {
+    font-size: 1.2rem; /* Smaller headings */
+  }
+
+  .footer p, .footer ul li {
+    font-size: 0.9rem; /* Smaller text */
+  }
+}
+
+
+/* faculty css-------------------------------------------------------------------------- */
+
+/* Faculty Container */
+.faculty-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f1eaea;
+ 
+}
+
+
+.faculty-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  margin: 10px;
+  border:  0.01px solid #ccc;
+  padding: 20px 20px 20px 20px;
+ 
+
+
+  background-color: white;
+  border: 1px solid #ddd; /* Subtle border for separation */
+  border-radius: 8px;
+  
+ 
+  transition: transform 0.3s ease-in-out;
+ 
+}
+
+.faculty-card:hover {
+  transform: translateY(-5px);
+}
+
+.faculty-card img {
+  width: 100px;  /* Set a fixed size for the image */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* Create a circular border */
+  margin-right: 20px;
+}
+
+.faculty-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faculty-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.faculty-details h5 {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.faculty-details p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Social Media Icons */
+.social-media-icons {
+  display: flex;
+  
+  gap: 10px;
+}
+
+.social-media-icons svg {
+  font-size: 1.5rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-media-icons svg:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faculty-card {
+    width: 100%; /* Stacks cards vertically on smaller screens */
+  }
+  .social-media-icons {
+    
+    align-items: center;
+    justify-content: center;
+   
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-details h2 {
+    font-size: 1.2rem;
+  }
+
+  .faculty-details h5 {
+    font-size: 0.9rem;
+  }
+
+  .faculty-details p {
+    font-size: 0.8rem;
+  }
+
+  .social-media-icons svg {
+    font-size: 1.2rem;
+  }
+
+  .social-media-icons {
+    
+    align-items: center;
+    justify-content: center;
+   
+  }
+}

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Service = () => {
+  
   return (
     <>
+
+<div>
+      
+    </div>
       <div
         className=""
         style={{
@@ -102,7 +107,7 @@ export const Service = () => {
       <div className="bookAppointment">
         <h2>Book an Appointment</h2>
 
-        <p>
+        <p >
           Experience personalized attention and expert guidance with our
           exclusive appointment service. Whether you’re choosing an engagement
           ring, designing custom jewelry, or exploring our exquisite
