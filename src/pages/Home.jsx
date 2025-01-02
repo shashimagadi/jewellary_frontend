@@ -9,6 +9,7 @@ import { Service } from "./Service";
 import { Departments } from "./Departments";
 import { Footer } from "./Footer";
 import { Faculty } from "./Faculty";
+import { Testimony } from "./Testimony";
 
 export const Home = () => {
   return (
@@ -67,7 +68,20 @@ export const Home = () => {
 <Departments/>
 
 <Faculty/>
+
+<Testimony/>
 <Footer/>
     </>
   );
 };
+
+
+{/* <div className="testimony_text">
+        <h4>Testimonials</h4>
+        <p>
+          "We strive to deliver exceptional quality and service that exceeds
+          expectations. Each piece of jewelry we create is crafted with care,
+          ensuring unparalleled elegance and value. Our customers’ satisfaction
+          and trust are the true jewels of our success."
+        </p>
+      </div> */}

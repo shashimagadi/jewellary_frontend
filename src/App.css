@@ -867,3 +867,157 @@ button:hover {
    
   }
 }
+
+
+/* question and answers css ------------------------- */
+
+.faq-container {
+  background-color: #fff; /* White background for the FAQ box */
+  border: 1px solid #ddd; /* Light border for better separation */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  
+}
+
+.faq-item.open {
+  background-color: #007bff !important; /* Blue background */
+  color: white; /* White text color */
+}
+
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.faq-answer {
+  margin-top: 10px;
+  color: #666; /* Slightly lighter text for answers */
+}
+
+/* 
+testimony css----------------------------- */
+/* Main Container */
+/* Styling for carousel captions and responsiveness */
+
+/* Testimonial container and layout */
+.testimony-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Wrapper for the text and carousel to align them horizontally */
+.testimony_text_slides {
+  display: flex;
+  justify-content: space-between;
+  width: 80%; /* Control the width of the card */
+ 
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Text section */
+.testimony_text_slides .col-md-6:first-child {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.testimony_text_slides h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.testimony_text_slides p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Testimonial image and text container */
+.testimony-details {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+   background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 10px 10px 20px ;
+}
+
+/* Testimonial sliding effect container */
+.testimony-slide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+}
+
+/* Testimonial image styling */
+.testimony-img {
+  width: 60px; /* Small image size */
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px; /* Space between image and text */
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial text styling */
+.testimony-text {
+  font-size: 18px;
+  color: #555;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Responsive styling for mobile and tablets */
+@media (max-width: 768px) {
+  .testimony_text_slides {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .testimony-details .testimony-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimony-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimony-details .testimony-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .testimony-text {
+    font-size: 12px;
+  }
+}
